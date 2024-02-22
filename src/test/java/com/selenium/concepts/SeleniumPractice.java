@@ -248,7 +248,7 @@ public class SeleniumPractice {
 	public void takeScreenshotDemo() throws IOException
 	{
 		//take screen shot by file type
-		//add
+		//add a b 
 		
 		TakesScreenshot shot=(TakesScreenshot)driver;
 		File srcFile=shot.getScreenshotAs(OutputType.FILE);
