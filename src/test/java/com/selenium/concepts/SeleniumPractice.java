@@ -1,16 +1,21 @@
 package com.selenium.concepts;
 
- import java.text.ParseException;
+ import java.io.File;
+import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.bouncycastle.oer.its.ieee1609dot2.basetypes.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,13 +38,13 @@ public class SeleniumPractice {
 	
 	//navigation command 
 	
-	@BeforeTest(enabled=false)
+	@BeforeTest(enabled=true)
 	public void openBrowser()
 	{
 		WebDriverManager.edgedriver().setup();
 		driver=new EdgeDriver();
 		driver.manage().window().maximize();
-		//driver.get("http://www.google.com");
+		driver.get("http://www.google.com");
 		//driver.get("https://demo.automationtesting.in/Static.html");
 
 		
@@ -237,6 +242,18 @@ public class SeleniumPractice {
  		caps.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.IGNORE);
  		
 		driver.get("http://www.google.com");
+	}
+	
+	@Test
+	public void takeScreenshotDemo() throws IOException
+	{
+		//take screen shot by file type
+		//add
+		
+		TakesScreenshot shot=(TakesScreenshot)driver;
+		File srcFile=shot.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(srcFile,new File(System.getProperty("user.dir")+"//screenshot//google.jpg"));
+		
 	}
 	
 
