@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Interview Preparation">
-	 
-  <test name="Prodcut search in Amazon site">
+	<listeners>
+		<listener class-name="Utilities.TestListener"></listener>
+	</listeners> 
+  <test name="Selenium Practice">
     <classes >
-      <class name="Utilities.DateDemo" />
+      <class name="com.selenium.concepts.SeleniumPractice" />
        
     </classes>
   </test> <!-- Test -->

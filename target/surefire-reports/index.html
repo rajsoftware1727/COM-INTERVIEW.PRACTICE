@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Interview_Preparation">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Interview_Preparation" title="com.rajesh.interview.LTICareer" class="method navigator-link" hash-for-method="checkLTI">checkLTI</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Interview_Preparation" title="com.selenium.concepts.SeleniumPractice" class="method navigator-link" hash-for-method="compareScreenshotImages">compareScreenshotImages</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Interview_Preparation -->
@@ -121,14 +121,14 @@
           <div class="suite-Interview_Preparation-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.rajesh.interview.LTICareer</span>
+              <span class="class-name">com.selenium.concepts.SeleniumPractice</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="checkLTI">
-                  </a> <!-- checkLTI -->
-                  <span class="method-name">checkLTI</span>
+                  <a name="compareScreenshotImages">
+                  </a> <!-- compareScreenshotImages -->
+                  <span class="method-name">compareScreenshotImages</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -143,11 +143,14 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Interview Preparation&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot; verbose=&quot;0&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;Utilities.TestListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Selenium Practice&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.rajesh.interview.LTICareer&quot;/&gt;
+      &lt;class name=&quot;com.selenium.concepts.SeleniumPractice&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test --&gt;
+  &lt;/test&gt; &lt;!-- Selenium Practice --&gt;
 &lt;/suite&gt; &lt;!-- Interview Preparation --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -159,7 +162,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">Selenium Practice (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -187,14 +190,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'checkLTI')
-data.setCell(0, 2, 'com.rajesh.interview.LTICareer')
-data.setCell(0, 3, 1258);
+data.setCell(0, 1, 'compareScreenshotImages')
+data.setCell(0, 2, 'com.selenium.concepts.SeleniumPractice')
+data.setCell(0, 3, 451);
 window.suiteTableData['Interview_Preparation']= { tableData: data, tableDiv: 'times-div-Interview_Preparation'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 451 ms</span>
               <div id="times-div-Interview_Preparation">
               </div> <!-- times-div-Interview_Preparation -->
             </div> <!-- times-div -->
@@ -209,9 +212,40 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Interview_Preparation" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">13 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.selenium.concepts.SeleniumPractice</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">DragDropDemo</span>
+                <br/>
+                <span class="ignored-method-name">findLinksINGooglePage</span>
+                <br/>
+                <span class="ignored-method-name">MouseEvents</span>
+                <br/>
+                <span class="ignored-method-name">resetWindowSize</span>
+                <br/>
+                <span class="ignored-method-name">pickDate</span>
+                <br/>
+                <span class="ignored-method-name">NavigateCommand</span>
+                <br/>
+                <span class="ignored-method-name">DesiredCapabilitiesTest</span>
+                <br/>
+                <span class="ignored-method-name">screenShotByAshot</span>
+                <br/>
+                <span class="ignored-method-name">FileOutputStreamDemo</span>
+                <br/>
+                <span class="ignored-method-name">findAppsINGoogleHomePage</span>
+                <br/>
+                <span class="ignored-method-name">takeScreenShotDemo</span>
+                <br/>
+                <span class="ignored-method-name">JavaScriptExecutorDemo</span>
+                <br/>
+                <span class="ignored-method-name">setDate</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Interview_Preparation" class="panel">
@@ -220,18 +254,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.rajesh.interview.LTICareer</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.selenium.concepts.SeleniumPractice</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">openBrowser</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">checkLTI</span>
-                <span class="method-start">7503 ms</span>
+                <span class="method-name">compareScreenshotImages</span>
+                <span class="method-start">6808 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">8770 ms</span>
+                <span class="method-start">7405 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -1,6 +1,9 @@
 package com.selenium.concepts;
 
- import java.io.File;
+ import java.awt.Point;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,7 +11,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.imageio.ImageIO;
+
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.bouncycastle.oer.its.ieee1609dot2.basetypes.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -26,15 +32,21 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import Utilities.DateClass;
+import Utilities.TestListener;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class SeleniumPractice {
 	
-	WebDriver driver;
+	static WebDriver driver;
+	java.util.logging.Logger logger;
 	
 	//navigation command 
 	
@@ -44,7 +56,11 @@ public class SeleniumPractice {
 		WebDriverManager.edgedriver().setup();
 		driver=new EdgeDriver();
 		driver.manage().window().maximize();
+		logger=TestListener.logger;
+ 		logger.info("browser opened");
+ 		
 		driver.get("http://www.google.com");
+		logger.info("getting url and ready to open");
 		//driver.get("https://demo.automationtesting.in/Static.html");
 
 		
@@ -63,7 +79,7 @@ public class SeleniumPractice {
 		driver.manage().window().setSize(dimension);
 	}
 	
-	@AfterTest(enabled=false)
+	@AfterTest(enabled=true)
 	public void tearDown()
 	{
 		driver.quit();
@@ -140,7 +156,7 @@ public class SeleniumPractice {
 	 
 	
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void pickDate() throws Exception 
 	{
 		try {
@@ -244,17 +260,81 @@ public class SeleniumPractice {
 		driver.get("http://www.google.com");
 	}
 	
-	@Test
-	public void takeScreenshotDemo() throws IOException
+ 	public static String getScreenShot()
 	{
-		//take screen shot by file type
-		//add a b c
-		
 		TakesScreenshot shot=(TakesScreenshot)driver;
-		File srcFile=shot.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(srcFile,new File(System.getProperty("user.dir")+"//screenshot//google.jpg"));
-		
+		return shot.getScreenshotAs(OutputType.BASE64);
+		  
 	}
+ 	
+ 	@Test(enabled=false)
+ 	public void takeScreenShotDemo() throws IOException
+ 	{
+ 		//type cast the driver into TakesScreenshot interface
+ 		
+		TakesScreenshot shot=(TakesScreenshot)driver;
+		/*File srcFile=shot.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(srcFile,new File(System.getProperty("user.dir")+"//screenshot"+"//google.jpg"));*/
+		//shot.getScreenshotAs(OutputType.BASE64);
+		byte[] image=shot.getScreenshotAs(OutputType.BYTES);
+		FileOutputStream fo=new FileOutputStream(System.getProperty("user.dir")+"//screenshot"+"//google1.jpg");
+		fo.write(image);
+		fo.close();
+
+ 	}
+ 	@Test(enabled=false)
+ 	public void FileOutputStreamDemo() throws IOException
+ 	{
+ 		String data="Hai how r u";
+		FileOutputStream fo=new FileOutputStream(System.getProperty("user.dir")+"//screenshot"+"//Data.txt");
+		byte[] g=data.getBytes();
+		fo.write(g);
+		fo.close();
+
+ 		
+ 	}
+ 	
+ 	//take screenshot by using Ashot class
+ 	
+ 	@Test(enabled=false)
+ 	public void screenShotByAshot() throws IOException
+ 	{
+ 		//create the object of Ashot class
+  		AShot shot=new AShot();
+		Screenshot screenShot=shot.shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver); //it take screen shot
+ 		ImageIO.write(screenShot.getImage(),"jpg",new File(System.getProperty("user.dir")+"screenshot"+"\\30000.jpg"));  //it write the screen shot image to given file
+ 		
+ 	}
+ 	
+ 	@Test(enabled=true)
+ 	public void compareScreenshotImages() throws IOException
+ 	{
+ 		//directly take screenshot particular element
+ 		/* WebElement googleImage=driver.findElement(By.xpath("//img[@class='lnXdpd']"));
+ 		File src=googleImage.getScreenshotAs(OutputType.FILE);
+ 		FileUtils.copyFile(src,new File(System.getProperty("user.dir")+"//screenshot//actual.jpg"));*/
+ 		BufferedImage expectedImage=ImageIO.read(new File(System.getProperty("user.dir")+"//screenshot//actual.jpg"));
+ 		//getting actual image
+ 		 WebElement googleImage=driver.findElement(By.xpath("//img[@class='lnXdpd']"));
+ 		TakesScreenshot ts=(TakesScreenshot)driver;
+ 		File f=ts.getScreenshotAs(OutputType.FILE);
+ 		BufferedImage g=ImageIO.read(f);
+ 		//get location of element
+ 		org.openqa.selenium.Point t=googleImage.getLocation();
+ 		int width=googleImage.getSize().getWidth();
+ 		int height=googleImage.getSize().getHeight();
+ 		BufferedImage j=g.getSubimage(t.getX(),t.getY(),width,height);
+ 		ImageIO.write(j,"png", f);
+ 		FileUtils.copyFile(f,new File(System.getProperty("user.dir")+"//screenshot//actual1.jpg"));
+ 		
+
+ 		
+ 		
+ 		 
+		
+ 		
+ 	}
+
 	
 
 }
