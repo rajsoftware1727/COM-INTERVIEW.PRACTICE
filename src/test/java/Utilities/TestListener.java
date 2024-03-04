@@ -35,7 +35,7 @@ public class TestListener implements ITestListener{
 	 @Override
 		public void onStart(ITestContext context) {
 
-			System.out.println("Test execution started");
+			System.out.println("Test on started");
 			  logger=Logger.getLogger(context.getName());
 			PropertyConfigurator.configure(System.getProperty("user.dir")+"//Log4j.properties");
 			//extent report creation
@@ -79,7 +79,8 @@ public class TestListener implements ITestListener{
 	public void onTestFailure(ITestResult result) {
 
 		System.out.println("test failed");
-		
+		extentTest=extentReport.createTest(result.getName());
+
 	    extentTest.log(Status.FAIL,MarkupHelper.createLabel(result.getName(),ExtentColor.RED));
        //if test fails i want to take screen shot
 	    

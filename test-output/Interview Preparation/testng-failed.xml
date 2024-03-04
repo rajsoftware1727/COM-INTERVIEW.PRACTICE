@@ -2,15 +2,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Interview Preparation]" guice-stage="DEVELOPMENT">
   <listeners>
-    <listener class-name="Utilities.Listener"/>
+    <listener class-name="Utilities.TestListener"/>
   </listeners>
-  <test thread-count="5" name="Prodcut search in Amazon site(failed)">
+  <test thread-count="5" name="Selenium Practice(failed)">
     <classes>
-      <class name="com.rajesh.interview.AmazonBuyProduct">
+      <class name="com.selenium.concepts.SeleniumPractice">
         <methods>
-          <include name="buyIPHONE"/>
+          <include name="Locators"/>
+          <include name="openBrowser"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.rajesh.interview.AmazonBuyProduct -->
+      </class> <!-- com.selenium.concepts.SeleniumPractice -->
     </classes>
-  </test> <!-- Prodcut search in Amazon site(failed) -->
+  </test> <!-- Selenium Practice(failed) -->
 </suite> <!-- Failed suite [Interview Preparation] -->
