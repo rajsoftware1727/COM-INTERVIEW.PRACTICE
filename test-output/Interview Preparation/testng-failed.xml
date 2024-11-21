@@ -8,7 +8,7 @@
     <classes>
       <class name="com.selenium.concepts.SeleniumPractice">
         <methods>
-          <include name="Locators"/>
+          <include name="fileUploadSikuli"/>
           <include name="openBrowser"/>
           <include name="tearDown"/>
         </methods>

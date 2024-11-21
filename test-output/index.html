@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Interview_Preparation">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Interview_Preparation" title="com.selenium.concepts.SeleniumPractice" class="method navigator-link" hash-for-method="Locators">Locators</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Interview_Preparation" title="INTERVIEW_JAVA.ToReadExcelData" class="method navigator-link" hash-for-method="enterNames(mngr507257, uzunyny)">enterNames(mngr507257, uzunyny)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Interview_Preparation -->
@@ -121,14 +121,15 @@
           <div class="suite-Interview_Preparation-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.selenium.concepts.SeleniumPractice</span>
+              <span class="class-name">INTERVIEW_JAVA.ToReadExcelData</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Locators">
-                  </a> <!-- Locators -->
-                  <span class="method-name">Locators</span>
+                  <a name="enterNames(mngr507257, uzunyny)">
+                  </a> <!-- enterNames(mngr507257, uzunyny) -->
+                  <span class="method-name">enterNames</span>
+                  <span class="parameters">(mngr507257,uzunyny)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -144,13 +145,13 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Interview Preparation&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;listeners&gt;
-    &lt;listener class-name=&quot;Utilities.TestListener&quot;/&gt;
+    &lt;listener class-name=&quot;INTERVIEW_JAVA.ActionListener&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Selenium Practice&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Selenium Practice Basics&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.selenium.concepts.SeleniumPractice&quot;/&gt;
+      &lt;class name=&quot;INTERVIEW_JAVA.ToReadExcelData&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Selenium Practice --&gt;
+  &lt;/test&gt; &lt;!-- Selenium Practice Basics --&gt;
 &lt;/suite&gt; &lt;!-- Interview Preparation --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -162,7 +163,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Selenium Practice (1 class)</span>
+                <span class="test-name">Selenium Practice Basics (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -190,14 +191,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Locators')
-data.setCell(0, 2, 'com.selenium.concepts.SeleniumPractice')
-data.setCell(0, 3, 44);
+data.setCell(0, 1, 'enterNames')
+data.setCell(0, 2, 'INTERVIEW_JAVA.ToReadExcelData')
+data.setCell(0, 3, 9);
 window.suiteTableData['Interview_Preparation']= { tableData: data, tableDiv: 'times-div-Interview_Preparation'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 44 ms</span>
+              <span class="suite-total-time">Total running time: 9 ms</span>
               <div id="times-div-Interview_Preparation">
               </div> <!-- times-div-Interview_Preparation -->
             </div> <!-- times-div -->
@@ -212,47 +213,21 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Interview_Preparation" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">18 ignored methods</span>
+            <span class="header-content">5 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.selenium.concepts.SeleniumPractice</span>
+              <span class="ignored-class-name">INTERVIEW_JAVA.ToReadExcelData</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">resetWindowSize</span>
+                <span class="ignored-method-name">readExcelData</span>
                 <br/>
-                <span class="ignored-method-name">ExplicitWaitDemo</span>
+                <span class="ignored-method-name">InvokeMethod</span>
                 <br/>
-                <span class="ignored-method-name">compareScreenshotImages</span>
+                <span class="ignored-method-name">readExcelData1</span>
                 <br/>
-                <span class="ignored-method-name">FileOutputStreamDemo</span>
+                <span class="ignored-method-name">toWriteData</span>
                 <br/>
-                <span class="ignored-method-name">FluentWaitDemo</span>
-                <br/>
-                <span class="ignored-method-name">WaitDemo1</span>
-                <br/>
-                <span class="ignored-method-name">readDataFromExcel</span>
-                <br/>
-                <span class="ignored-method-name">DesiredCapabilitiesTest</span>
-                <br/>
-                <span class="ignored-method-name">setDate</span>
-                <br/>
-                <span class="ignored-method-name">MouseEvents</span>
-                <br/>
-                <span class="ignored-method-name">takeScreenShotDemo</span>
-                <br/>
-                <span class="ignored-method-name">JavaScriptExecutorDemo</span>
-                <br/>
-                <span class="ignored-method-name">findLinksINGooglePage</span>
-                <br/>
-                <span class="ignored-method-name">findAppsINGoogleHomePage</span>
-                <br/>
-                <span class="ignored-method-name">DragDropDemo</span>
-                <br/>
-                <span class="ignored-method-name">screenShotByAshot</span>
-                <br/>
-                <span class="ignored-method-name">NavigateCommand</span>
-                <br/>
-                <span class="ignored-method-name">writeToExcel</span>
+                <span class="ignored-method-name">toWriteDataUsingForEachLoop</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -264,19 +239,15 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.selenium.concepts.SeleniumPractice</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">INTERVIEW_JAVA.ToReadExcelData</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">openBrowser</span>
+                <span class="method-name">beforeTest</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">Locators</span>
-                <span class="method-start">7275 ms</span>
+                <span class="method-name">enterNames(mngr507257, uzunyny)</span>
+                <span class="method-start">874 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-test after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">7483 ms</span>
-              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

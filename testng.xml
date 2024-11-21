@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Interview Preparation">
 	<listeners>
-		<listener class-name="Utilities.TestListener"></listener>
+		<listener class-name="INTERVIEW_JAVA.ActionListener"></listener>
 	</listeners> 
-  <test name="Selenium Practice">
+  <test name="Selenium Practice Basics">
     <classes >
-      <class name="com.selenium.concepts.SeleniumPractice" />
+      <class name="INTERVIEW_JAVA.ToReadExcelData" />
        
     </classes>
   </test> <!-- Test -->

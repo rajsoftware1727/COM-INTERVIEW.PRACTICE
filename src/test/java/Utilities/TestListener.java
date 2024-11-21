@@ -22,38 +22,34 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.selenium.concepts.SeleniumPractice;
 import org.apache.log4j.PropertyConfigurator;
 
-
-public class TestListener implements ITestListener{
+public class TestListener implements ITestListener {
 
 	ExtentReports extentReport;
 	ExtentSparkReporter sparkReport;
 	ExtentTest extentTest;
-	 String screenShotPath;
-	  String reportName;
-	  public static Logger logger;
+	String screenShotPath;
+	String reportName;
+	public static Logger logger;
 
-	 @Override
-		public void onStart(ITestContext context) {
+	@Override
+	public void onStart(ITestContext context) {
 
-			System.out.println("Test on started");
-			  logger=Logger.getLogger(context.getName());
-			PropertyConfigurator.configure(System.getProperty("user.dir")+"//Log4j.properties");
-			//extent report creation
-			String timeStamp=new SimpleDateFormat("dd-MM-yyyy HH.mm.ss").format(new Date());
-			  reportName="TestReport-"+timeStamp+".html";
-			extentReport=new ExtentReports();
-			sparkReport=new ExtentSparkReporter(System.getProperty("user.dir")+"//test-output//"+reportName);
-			extentReport.attachReporter(sparkReport);
+		System.out.println("Test on started");
+		logger = Logger.getLogger(context.getName());
+		PropertyConfigurator.configure(System.getProperty("user.dir") + "//Log4j.properties");
+		// extent report creation
+		String timeStamp = new SimpleDateFormat("dd-MM-yyyy HH.mm.ss").format(new Date());
+		reportName = "TestReport-" + timeStamp + ".html";
+		extentReport = new ExtentReports();
+		sparkReport = new ExtentSparkReporter(System.getProperty("user.dir") + "//test-output//" + reportName);
+		extentReport.attachReporter(sparkReport);
 
-		}
+	}
+
 	@Override
 	public void onTestStart(ITestResult result) {
 
 		System.out.println("test on started");
-
-		 
-	     
-	    
 
 	}
 
@@ -61,17 +57,14 @@ public class TestListener implements ITestListener{
 	public void onTestSuccess(ITestResult result) {
 
 		System.out.println("test success");
-		 
-		
 
-		extentTest=extentReport.createTest(result.getName());
-	    extentTest.log(Status.PASS,MarkupHelper.createLabel(result.getName(),ExtentColor.GREEN));
-	    
-	    //if test passes i want to take screen shot
-	    
-	     screenShotPath=SeleniumPractice.getScreenShot();
-	     extentTest.addScreenCaptureFromBase64String(screenShotPath);
-	    
+		extentTest = extentReport.createTest(result.getName());
+		extentTest.log(Status.PASS, MarkupHelper.createLabel(result.getName(), ExtentColor.GREEN));
+
+		// if test passes i want to take screen shot
+
+		screenShotPath = SeleniumPractice.getScreenShot();
+		extentTest.addScreenCaptureFromBase64String(screenShotPath);
 
 	}
 
@@ -79,14 +72,13 @@ public class TestListener implements ITestListener{
 	public void onTestFailure(ITestResult result) {
 
 		System.out.println("test failed");
-		extentTest=extentReport.createTest(result.getName());
+		extentTest = extentReport.createTest(result.getName());
 
-	    extentTest.log(Status.FAIL,MarkupHelper.createLabel(result.getName(),ExtentColor.RED));
-       //if test fails i want to take screen shot
-	    
-	     screenShotPath=SeleniumPractice.getScreenShot();
-	     extentTest.addScreenCaptureFromBase64String(screenShotPath);
-	     
+		extentTest.log(Status.FAIL, MarkupHelper.createLabel(result.getName(), ExtentColor.RED));
+		// if test fails i want to take screen shot
+
+		screenShotPath = SeleniumPractice.getScreenShot();
+		extentTest.addScreenCaptureFromBase64String(screenShotPath);
 
 	}
 
@@ -97,28 +89,18 @@ public class TestListener implements ITestListener{
 
 	}
 
-
-
-
-
-	 
-
 	@Override
 	public void onFinish(ITestContext context) {
 
 		System.out.println("test on finished");
 		extentReport.flush();
 		try {
-			Desktop.getDesktop().browse(new File(System.getProperty("user.dir")+"//test-output//"+reportName).toURI());
+			Desktop.getDesktop()
+					.browse(new File(System.getProperty("user.dir") + "//test-output//" + reportName).toURI());
 		} catch (IOException e) {
- 			e.printStackTrace();
+			e.printStackTrace();
 		}
 
-
 	}
-	
-	
-
-
 
 }

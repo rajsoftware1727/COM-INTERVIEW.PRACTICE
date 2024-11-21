@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="18" total="19" passed="1" failed="0" skipped="0">
+<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-03T23:38:43 IST" name="Interview Preparation" finished-at="2024-03-03T23:38:51 IST" duration-ms="7941">
+  <suite started-at="2024-11-21T17:34:12 IST" name="Interview Preparation" finished-at="2024-11-21T17:34:13 IST" duration-ms="1246">
     <groups>
     </groups>
-    <test started-at="2024-03-03T23:38:43 IST" name="Selenium Practice" finished-at="2024-03-03T23:38:51 IST" duration-ms="7941">
-      <class name="com.selenium.concepts.SeleniumPractice">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:com.selenium.concepts.SeleniumPractice@5542c4ed]" started-at="2024-03-03T23:38:43 IST" name="openBrowser" finished-at="2024-03-03T23:38:51 IST" duration-ms="7253" status="PASS">
+    <test started-at="2024-11-21T17:34:12 IST" name="Selenium Practice Basics" finished-at="2024-11-21T17:34:13 IST" duration-ms="1246">
+      <class name="INTERVIEW_JAVA.ToReadExcelData">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:INTERVIEW_JAVA.ToReadExcelData@71e9ddb4]" started-at="2024-11-21T17:34:12 IST" name="beforeTest" finished-at="2024-11-21T17:34:12 IST" duration-ms="29" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openBrowser -->
-        <test-method signature="Locators()[pri:0, instance:com.selenium.concepts.SeleniumPractice@5542c4ed]" started-at="2024-03-03T23:38:51 IST" name="Locators" finished-at="2024-03-03T23:38:51 IST" duration-ms="44" status="PASS">
+        </test-method> <!-- beforeTest -->
+        <test-method signature="enterNames(java.lang.String,java.lang.String)[pri:0, instance:INTERVIEW_JAVA.ToReadExcelData@71e9ddb4]" started-at="2024-11-21T17:34:13 IST" name="enterNames" data-provider="rr" finished-at="2024-11-21T17:34:13 IST" duration-ms="9" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[mngr507257]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[uzunyny]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Locators -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.selenium.concepts.SeleniumPractice@5542c4ed]" started-at="2024-03-03T23:38:51 IST" name="tearDown" finished-at="2024-03-03T23:38:51 IST" duration-ms="225" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.selenium.concepts.SeleniumPractice -->
-    </test> <!-- Selenium Practice -->
+        </test-method> <!-- enterNames -->
+      </class> <!-- INTERVIEW_JAVA.ToReadExcelData -->
+    </test> <!-- Selenium Practice Basics -->
   </suite> <!-- Interview Preparation -->
 </testng-results>
